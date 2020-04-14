@@ -1,6 +1,6 @@
 # Instana SDK Examples for .NET Core
 This repository provides examples on how to use the Instana Tracing SDK for .NET Core, starting with .NET Core 2.1.
-Instana provides a nuget-package for the SDK, which you can add to your applications : https://www.nuget.org/packages/Instana.Tracing.Sdk/
+Instana provides a nuget-package for the SDK, which you can add to your applications : https://www.nuget.org/packages/Instana.Tracing.Core.Sdk/
 
 Once installed, you can use the APIs the SDK provides to create your own, codified traces for your applications.
 The projects inside this repo display different scenarios in which the SDK can be helpful, in addition to automatic tracing.
