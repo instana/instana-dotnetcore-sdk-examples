@@ -15,9 +15,9 @@ display the pattern to be applied in distributed scenarios, without going into t
 ## APIs used
 The application uses the following APIs
 
-* CustomSpan.CreateEntryForNewTrace => Starts a new trace without looking for any provided context for continuation
-* CustomSpan.CreateExit => Used for a call leaving a subsystem (in the example leaving the pipeline to call the individual steps)
-* CustomSpan.CreateEntry => Used inside the individual steps (directly following the `CreateExit`- call going ot from the pipeline)
-* CustomSpan.WrapAction => Used for automatic error-handling / -collection
-* CustomSpan.SetTag => Used for custom annotations to the span to facilitate retrieval
+* `CustomSpan.CreateEntryForNewTrace` => Starts a new trace without looking for any provided context for continuation
+* `CustomSpan.CreateExit` => Used for a call leaving a subsystem (in the example leaving the pipeline to call the individual steps)
+* `CustomSpan.CreateEntry` => Used inside the individual steps (directly following the `CreateExit`- call going ot from the pipeline)
+* `CustomSpan.WrapAction` => Used for automatic error-handling / -collection
+* `CustomSpan.SetTag` => Used for custom annotations to the span to facilitate retrieval
 
