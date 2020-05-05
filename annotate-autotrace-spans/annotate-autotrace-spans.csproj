@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>annotate_autotrace_spans</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Instana.Tracing.Core" Version="1.1.42" />
+    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.0.66" />
+    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.0.64-preview-06" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="run.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+
+</Project>
