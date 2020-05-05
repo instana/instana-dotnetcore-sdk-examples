@@ -1,6 +1,11 @@
 custom-database-example/.vs/
-custom-database-example/bin/Debug/netcoreapp3.1/custom-database-example.deps.json
 custom-database-example/bin/
 custom-database-example/obj/
 custom-messaging-example/bin/
 custom-messaging-example/obj/
+annotate-autotrace-spans/.vs/
+annotate-autotrace-spans/bin/
+annotate-autotrace-spans/obj/
+annotate-autotrace-spans/out/
+console-example/obj/
+.vs/
