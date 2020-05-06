@@ -9,3 +9,8 @@ annotate-autotrace-spans/obj/
 annotate-autotrace-spans/out/
 console-example/obj/
 .vs/
+intermediate-spans/.ionide/
+intermediate-spans/bin/
+intermediate-spans/obj/
+intermediate-spans/out/
+annotate-autotrace-spans/.ionide/
