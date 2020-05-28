@@ -7,8 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.0.66" />
-    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.0.64" />
+    <PackageReference Include="Instana.Tracing.Core" Version="1.1.45" />
+    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.0.67" />
+    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.0.65" />
   </ItemGroup>
 
 </Project>
