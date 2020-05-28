@@ -15,7 +15,8 @@ namespace custom_database_example
             // create the span for the outgoing call. Since we know that we're calling
             // a database, we can annotate the call accordingly with convenient extension-methods
             // Here we use: CustomExitSpan.AsDbCallTo()
-            using (var connectionSpan = CustomSpan.CreateExit(this, null)
+            // additionally we request a call-stack to be captured with a maximum of 10 frames
+            using (var connectionSpan = CustomSpan.CreateExit(this, null, callStackFrames: 10)
                                                   .AsDbCallTo(host + ":" + databaseName, "CONNECT", "sql"))
             {
                 if (!string.IsNullOrEmpty(host) && !string.IsNullOrEmpty(databaseName))
@@ -31,7 +32,7 @@ namespace custom_database_example
         public IDataReader ExecuteQuery(string queryText)
         {
             // Create the span for the query targeting the database (-fake)
-            using (var commandSpan = CustomSpan.CreateExit(this, null).AsDbCallTo(_databaseName, queryText, "sql"))
+            using (var commandSpan = CustomSpan.CreateExit(this, null, callStackFrames: 10).AsDbCallTo(_databaseName, queryText, "sql"))
             {
                 // we're wrapping the basic functionality here, which allows us to collect
                 // errors if they happen automatically.

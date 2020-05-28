@@ -22,8 +22,8 @@ namespace custom_database_example
                     var text = Console.ReadLine();
                     // we create an entry-span as the root to our trace here, and we're pretending it was an http-call
                     // by using the AsHttpTo extensions-method...
-                    
-                    using (var rootSpan = CustomSpan.CreateEntry(null, null).AsHttpTo("https://somewhere.inthe.cloud/api/databaseaccess"))
+                    // also we request a call-stack with a maximum of 10 frames to be captured
+                    using (var rootSpan = CustomSpan.CreateEntry(null, null,callStackFrames:10).AsHttpTo("https://somewhere.inthe.cloud/api/databaseaccess"))
                     {
                         // dig into the code of DatabaseClient to see how the rest of the
                         // trace is created by means of the SDK...
