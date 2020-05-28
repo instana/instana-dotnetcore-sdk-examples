@@ -14,3 +14,8 @@ intermediate-spans/bin/
 intermediate-spans/obj/
 intermediate-spans/out/
 annotate-autotrace-spans/.ionide/
+console-example/bin/
+console-example/out/
+custom-database-example/out/custom-database-example.deps.json
+custom-database-example/out/
+.ionide/
