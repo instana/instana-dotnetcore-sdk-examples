@@ -11,7 +11,7 @@ namespace custom_messaging_example
         private static List<string> _topics = new List<string>();
         private static Dictionary<string, MessageConsumer> _topicToConsumer = new Dictionary<string, MessageConsumer>();
         private static bool _listening = false;
-
+        private static Task _listenerTask;
 
         private static BlockingCollection<Message> _messages = new BlockingCollection<Message>();
         public static void RegisterTopic(string topicName)
@@ -38,6 +38,7 @@ namespace custom_messaging_example
             {
                 MessageConsumer consumer = new MessageConsumer() { Topic = topic };
             }
+            
             _listenerTask = Task.Factory.StartNew(() =>
             {
                 foreach (Message msg in _messages.GetConsumingEnumerable())
