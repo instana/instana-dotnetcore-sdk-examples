@@ -22,7 +22,7 @@ namespace InstanaSDKConsoleExample
         {
             // let's create the root for our trace. A trace always starts with an entry
             // (something enters a system, which leads to a reaction)
-            using (var traceRoot = CustomSpan.CreateEntryForNewTrace(this, null))
+            using (var traceRoot = CustomSpan.CreateEntryForNewTrace(this))
             {
                 // since we want to collect errors happening during the process, we
                 // wrap the call, so that any exception will be automatically collected
