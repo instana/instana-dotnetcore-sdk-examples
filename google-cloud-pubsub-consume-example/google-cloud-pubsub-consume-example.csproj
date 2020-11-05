@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>google_cloud_pubsub_consume_example</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Google.Cloud.PubSub.V1" Version="2.1.0" />
+    <PackageReference Include="Instana.Tracing.Core" Version="1.189.11" />
+    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.189.11" />
+    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.189.10-preview02" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="run.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
