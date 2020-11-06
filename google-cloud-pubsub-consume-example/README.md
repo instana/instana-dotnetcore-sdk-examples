@@ -16,7 +16,7 @@ SDK spans for consume calls should be created for both subscribers and correlati
 
 ## How to run
 
-Just download the code, publish the app and start it.
+Just download the code, publish the app, set the env-vars and start it.
 For convenience we added a script, which does all of that for you.
 
 ```powershell
