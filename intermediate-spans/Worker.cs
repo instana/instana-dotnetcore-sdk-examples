@@ -17,7 +17,7 @@ namespace intermediate_spans
         public void DoThis(StringBuilder state)
         {
             // create one intermediate span for this subtask
-            using (var thisSpan = CustomSpan.Create(this, SpanType.INTERMEDIATE))
+            using (var thisSpan = CustomSpan.Create(this, SpanType.INTERMEDIATE,"Test",10))
             {
                 state.Append("...This...");
                 // and annotate the span with something for us to see
