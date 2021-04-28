@@ -17,15 +17,14 @@ namespace AWSSQSExample
             ReceiveMessageRequest receiveMessageRequest = new ReceiveMessageRequest("http://localhost:9324/queue/test");
             receiveMessageRequest.MaxNumberOfMessages = 10;
 
+            Message correlationMessage = null;
+            ReceiveMessageResponse r = await amazonSQS.ReceiveMessageAsync(receiveMessageRequest);
+            List<DeleteMessageBatchRequestEntry> deleteReqEntries = new List<DeleteMessageBatchRequestEntry>(r.Messages.Count);
+            correlationMessage = r.Messages.FirstOrDefault();
+
             using (var span = CustomSpan.Create()
                        .AsAWSSQSMessageReceive(receiveMessageRequest.QueueUrl))
             {
-
-                Message correlationMessage = null;
-                ReceiveMessageResponse r = await amazonSQS.ReceiveMessageAsync(receiveMessageRequest);
-                List<DeleteMessageBatchRequestEntry> deleteReqEntries = new List<DeleteMessageBatchRequestEntry>(r.Messages.Count);
-                correlationMessage = r.Messages.FirstOrDefault();
-
                 span.WrapAction(() =>
                 {
                     foreach (var message in r.Messages)
@@ -43,10 +42,9 @@ namespace AWSSQSExample
                 }, true);
 
                 span.AsChildOf(() => GetDisInfo(correlationMessage));
-
-                DeleteMessageBatchRequest deleteMessageBatchRequest = new DeleteMessageBatchRequest("http://localhost:9324/queue/test", deleteReqEntries);
-                var response = await amazonSQS.DeleteMessageBatchAsync(deleteMessageBatchRequest);
             }
+            DeleteMessageBatchRequest deleteMessageBatchRequest = new DeleteMessageBatchRequest("http://localhost:9324/queue/test", deleteReqEntries);
+            var response = await amazonSQS.DeleteMessageBatchAsync(deleteMessageBatchRequest);
         }
 
         public static DistributedTraceInformation GetDisInfo(Message msg)

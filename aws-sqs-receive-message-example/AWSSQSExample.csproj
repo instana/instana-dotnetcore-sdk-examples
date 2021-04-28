@@ -12,4 +12,10 @@
     <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.199.1-preview01" />
   </ItemGroup>
 
+  <ItemGroup>
+    <None Update="run.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
 </Project>
