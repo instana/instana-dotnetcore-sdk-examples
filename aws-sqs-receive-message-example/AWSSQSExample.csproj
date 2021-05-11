@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AWSSDK.SQS" Version="3.7.0.16" />
+    <PackageReference Include="Instana.Tracing.Core" Version="1.199.3" />
+    <PackageReference Include="Instana.Tracing.Core.Rewriter.Windows" Version="1.199.3" />
+    <PackageReference Include="Instana.Tracing.Core.Sdk" Version="1.199.1-preview01" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="run.ps1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
