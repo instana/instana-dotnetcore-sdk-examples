@@ -1,0 +1,24 @@
+{
+  "version": 2,
+  "dgSpecHash": "ZIj0tuTA3Y0OWnat5hW/kc9QR0r1kky8a+K0zl42sXddMScjXY1RcYa5IGjYn7fwVjUTGzhBw3isoflzobfWOQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\172736724\\source\\repos\\instana-dotnetcore-sdk-examples\\azure-queues-example\\azure-queues-example\\azure-queues-example.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\172736724\\.nuget\\packages\\azure.core\\1.19.0\\azure.core.1.19.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\azure.storage.common\\12.9.0\\azure.storage.common.12.9.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\azure.storage.queues\\12.8.0\\azure.storage.queues.12.8.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\instana.tracing.core\\1.200.2\\instana.tracing.core.1.200.2.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\instana.tracing.core.sdk\\1.209.1\\instana.tracing.core.sdk.1.209.1.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.0.0\\microsoft.bcl.asyncinterfaces.1.0.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.buffers\\4.5.1\\system.buffers.4.5.1.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.6.0\\system.diagnostics.diagnosticsource.4.6.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.memory\\4.5.4\\system.memory.4.5.4.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.memory.data\\1.0.2\\system.memory.data.1.0.2.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.text.encodings.web\\4.7.2\\system.text.encodings.web.4.7.2.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.text.json\\4.6.0\\system.text.json.4.6.0.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.2\\system.threading.tasks.extensions.4.5.2.nupkg.sha512",
+    "C:\\Users\\172736724\\.nuget\\packages\\microsoft.netcore.app.host.win-x64\\3.1.18\\microsoft.netcore.app.host.win-x64.3.1.18.nupkg.sha512"
+  ],
+  "logs": []
+}
