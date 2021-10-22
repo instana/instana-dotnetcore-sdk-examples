@@ -7,8 +7,8 @@ namespace azure_queues_example
 {
     public static class Program
     {
-        const string testConnectionString = "DefaultEndpointsProtocol=https;AccountName=queueinfratest;AccountKey=Hux6bQ1wH4EmDMLYQhveSKBChIX9xB+opyOZWoFvZfw4A4FsxTOVezFgZC2EUDKV7xqVrwH27/Q26yFnQptu6w==;EndpointSuffix=core.windows.net";
-        const string testQueueName = "queue1";
+        const string testConnectionString = "{connection_string}";
+        const string testQueueName = "{queue_name}";
 
         static void Main(string[] args)
         {
@@ -22,7 +22,7 @@ namespace azure_queues_example
 
             while (true)
             {
-                Message message = new Message("Simple text message");
+                Message message = new Message("Simple text message || with | separator | =included=");
                 using (var rootSpan = CustomSpan.CreateEntryForNewTrace(null))
                 {
                     enqueueManager.Enqueue(message, queue);

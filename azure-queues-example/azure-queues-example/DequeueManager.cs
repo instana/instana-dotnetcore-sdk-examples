@@ -3,6 +3,7 @@ using Azure.Storage.Queues.Models;
 using Instana.Tracing.Api;
 using Instana.Tracing.Sdk.Spans;
 using System;
+using System.Text;
 
 namespace azure_queues_example
 {
@@ -12,7 +13,7 @@ namespace azure_queues_example
         {
             foreach (QueueMessage queueMessage in queue.ReceiveMessages(count).Value)
             {
-                using(var entrySpan = CustomSpan.CreateEntry(null, () => ExtractCorrelationData(queueMessage.Body.ToString())))
+                using (var entrySpan = CustomSpan.CreateEntry(null, () => ExtractCorrelationData(queueMessage.Body.ToString())))
                 {
                     HandleMessage(queueMessage, queue);
                 }
@@ -22,8 +23,8 @@ namespace azure_queues_example
         private static DistributedTraceInformation ExtractCorrelationData(string messageBody)
         {
             string[] messageParts = messageBody.Split('|');
-            string[] correlationParts1 = messageParts[1].Split('=');
-            string[] correlationParts2 = messageParts[2].Split('=');
+            string[] correlationParts1 = messageParts[messageParts.Length - 2].Split('=');
+            string[] correlationParts2 = messageParts[messageParts.Length - 1].Split('=');
 
             Console.WriteLine($"{correlationParts1[0]}: {correlationParts1[1]}");
             Console.WriteLine($"{correlationParts2[0]}: {correlationParts2[1]}");
@@ -38,7 +39,16 @@ namespace azure_queues_example
         private string ExtractMessageText(BinaryData messageBody)
         {
             string[] messageParts = messageBody.ToString().Split('|');
-            return messageParts[0];
+            StringBuilder sb = new StringBuilder();
+            for (var i = 0; i < messageParts.Length - 2; i++)
+            {
+                if (i == 0)
+                    sb.Append(messageParts[i]);
+                else
+                    sb.Append("|").Append(messageParts[i]);
+            }
+
+            return sb.ToString();
         }
 
         private void HandleMessage(QueueMessage queueMessage, QueueClient queue)
